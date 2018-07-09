@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/cfn-modules/rds-mysql.svg?branch=master)](https://travis-ci.org/cfn-modules/rds-mysql)
+[![NPM version](https://img.shields.io/npm/v/@cfn-modules/rds-mysql.svg)](https://www.npmjs.com/package/@cfn-modules/rds-mysql)
+
 # cfn-modules: RDS MySQL
 
 RDS MySQL database with secure firewall configuration, [encryption](https://www.npmjs.com/package/@cfn-modules/kms-key), multi AZ, backup enabled, and [alerting](https://www.npmjs.com/package/@cfn-modules/alerting).
