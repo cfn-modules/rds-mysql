@@ -25,7 +25,7 @@ Resources:
     Properties:
       Parameters:
         VpcModule: !GetAtt 'Vpc.Outputs.StackName' # required
-        ClientSgModule: !GetAtt 'Client.Outputs.StackName' # required
+        ClientSgModule: !GetAtt 'ClientSg.Outputs.StackName' # required
         AlertingModule: '' # optional
         HostedZoneModule: '' # optional
         BastionModule: '' # optional
