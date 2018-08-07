@@ -20,7 +20,7 @@ npm i @cfn-modules/rds-mysql
 AWSTemplateFormatVersion: '2010-09-09'
 Description: 'cfn-modules example'
 Resources:
-  Function:
+  Database:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
       Parameters:
