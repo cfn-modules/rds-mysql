@@ -108,7 +108,7 @@ Outputs:
   ModuleId:
     Value: 'rds-mysql'
   ModuleVersion:
-    Value: '0.0.3'
+    Value: '1.0.0'
   StackName:
     Value: !Ref 'AWS::StackName'
   Name:
