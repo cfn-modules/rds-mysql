@@ -1,6 +1,6 @@
 {
   "name": "@cfn-modules/rds-mysql",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "RDS MySQL database with secure firewall configuration, encryption, multi AZ, backup enabled, and alerting",
   "author": "Michael Wittig <michael@widdix.de>",
   "license": "Apache-2.0",
