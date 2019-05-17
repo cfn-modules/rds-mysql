@@ -84,7 +84,7 @@ Parameters:
     Description: 'MySQL version.'
     Type: String
     Default: '5.7.21'
-    AllowedValues: ['5.7.21']
+    AllowedValues: ['8.0.15', '5.7.25', '5.7.21', '5.6.41', '5.5.61']
 Resources:
   Instance:
     Type: 'AWS::CloudFormation::Stack'
