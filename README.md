@@ -39,6 +39,7 @@ Resources:
         DBMasterUserPassword: '' # required if DBSnapshotIdentifier is not set
         DBMultiAZ: true # optional
         SubDomainNameWithDot: 'mysql.' # optional
+        EngineVersion: '5.7.21' # set this to the latest available version!
       TemplateURL: './node_modules/@cfn-modules/rds-mysql/module.yml'
 ```
 
@@ -160,6 +161,13 @@ Resources:
       <td>test.</td>
       <td>no</td>
       <td></td>
+    </tr>
+    <tr>
+      <td>EngineVersion</td>
+      <td>MySQL version</td>
+      <td>5.7.21</td>
+      <td>no</td>
+      <td>['8.0.15', '5.7.25', '5.7.21', '5.6.41', '5.5.61']</td>
     </tr>
   </tbody>
 </table>
