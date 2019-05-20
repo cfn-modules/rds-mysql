@@ -43,6 +43,15 @@ Resources:
       TemplateURL: './node_modules/@cfn-modules/rds-mysql/module.yml'
 ```
 
+## Examples
+
+* [ec2-mysql](https://github.com/cfn-modules/docs/tree/master/examples/ec2-mysql)
+
+## Related modules
+
+* [rds-aurora-serverless](https://github.com/cfn-modules/rds-aurora-serverless)
+* [rds-postgres](https://github.com/cfn-modules/rds-postgres)
+
 ## Parameters
 
 <table>
