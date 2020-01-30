@@ -39,7 +39,8 @@ Resources:
         DBMasterUserPassword: '' # required if DBSnapshotIdentifier is not set
         DBMultiAZ: true # optional
         SubDomainNameWithDot: 'mysql.' # optional
-        EngineVersion: '5.7.21' # set this to the latest available version!
+        EngineVersion: '5.7.21' # set this to the latest available version when launching!
+        EnableIAMDatabaseAuthentication: 'false' # optional
       TemplateURL: './node_modules/@cfn-modules/rds-mysql/module.yml'
 ```
 
@@ -177,6 +178,13 @@ Resources:
       <td>5.7.21</td>
       <td>no</td>
       <td>['8.0.15', '5.7.25', '5.7.21', '5.6.41', '5.5.61']</td>
+    </tr>
+     <tr>
+      <td>EnableIAMDatabaseAuthentication</td>
+      <td>Enable <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">mapping of AWS Identity and Access Management (IAM) accounts to database accounts</a>).</td>
+      <td>true</td>
+      <td>no</td>
+      <td>[true, false]</td>
     </tr>
   </tbody>
 </table>
