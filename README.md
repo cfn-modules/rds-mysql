@@ -40,7 +40,7 @@ Resources:
         DBMultiAZ: true # optional
         SubDomainNameWithDot: 'mysql.' # optional
         EngineVersion: '5.7.21' # set this to the latest available version when launching!
-        EnableIAMDatabaseAuthentication: 'false' # optional
+        EnableIAMDatabaseAuthentication: 'true' # optional
       TemplateURL: './node_modules/@cfn-modules/rds-mysql/module.yml'
 ```
 
