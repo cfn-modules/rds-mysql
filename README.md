@@ -172,9 +172,9 @@ Resources:
     <tr>
       <td>EngineVersion</td>
       <td>MySQL version</td>
-      <td>5.7.21</td>
+      <td>5.7.38</td>
       <td>no</td>
-      <td>['8.0.15', '5.7.25', '5.7.21', '5.6.41', '5.5.61']</td>
+      <td>['8.0.15', '5.7.38', '5.7.25', '5.7.21', '5.6.41', '5.5.61']</td>
     </tr>
      <tr>
       <td>EnableIAMDatabaseAuthentication</td>
