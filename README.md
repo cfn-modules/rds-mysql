@@ -27,13 +27,14 @@ Resources:
         HostedZoneModule: '' # optional
         BastionModule: '' # optional
         KmsKeyModule: '' # optional
+        SecretModule: '' # optional
         DBSnapshotIdentifier: '' # optional
         DBAllocatedStorage: 5 # optional
         DBInstanceClass: 'db.t2.micro' # optional
         DBName: '' # optional
         DBBackupRetentionPeriod: 30 # optional
         DBMasterUsername: 'master' # optional
-        DBMasterUserPassword: '' # required if DBSnapshotIdentifier is not set
+        DBMasterUserPassword: '' # required neither DBSnapshotIdentifier nor SecretModule is set
         DBMultiAZ: true # optional
         SubDomainNameWithDot: 'mysql.' # optional
         EngineVersion: '5.7.21' # set this to the latest available version when launching!
@@ -106,6 +107,13 @@ Resources:
       <td></td>
     </tr>
     <tr>
+      <td>SecretModule</td>
+      <td>Stack name of <a href="https://www.npmjs.com/package/@cfn-modules/secret">secret module</a></td>
+      <td></td>
+      <td>no</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>DBSnapshotIdentifier</td>
       <td>Name or Amazon Resource Name (ARN) of the DB snapshot from which you want to restore (leave blank to create an empty database)</td>
       <td></td>
@@ -150,7 +158,7 @@ Resources:
     </tr>
     <tr>
       <td>DBMasterUserPassword</td>
-      <td>The master password for the DB instance (ignored when DBSnapshotIdentifier is set, value used from snapshot)</td>
+      <td>The master password for the DB instance (ignored when DBSnapshotIdentifier is set, value used from snapshot; also ignored if SecretModule is set).</td>
       <td></td>
       <td>yes (no if DBSnapshotIdentifier is set)</td>
       <td></td>
