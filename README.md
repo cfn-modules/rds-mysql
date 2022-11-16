@@ -34,7 +34,7 @@ Resources:
         DBName: '' # optional
         DBBackupRetentionPeriod: 30 # optional
         DBMasterUsername: 'master' # optional
-        DBMasterUserPassword: '' # required neither DBSnapshotIdentifier nor SecretModule is set
+        DBMasterUserPassword: '' # required if neither DBSnapshotIdentifier nor SecretModule is set
         DBMultiAZ: true # optional
         SubDomainNameWithDot: 'mysql.' # optional
         EngineVersion: '5.7.21' # set this to the latest available version when launching!
