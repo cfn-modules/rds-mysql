@@ -30,7 +30,7 @@ Resources:
         SecretModule: '' # optional
         DBSnapshotIdentifier: '' # optional
         DBAllocatedStorage: 5 # optional
-        DBInstanceClass: 'db.t2.micro' # optional
+        DBInstanceClass: 'db.t4g.micro' # optional
         DBName: '' # optional
         DBBackupRetentionPeriod: 30 # optional
         DBMasterUsername: 'master' # optional
@@ -133,7 +133,7 @@ Resources:
     <tr>
       <td>DBInstanceClass</td>
       <td>The instance type of the database</td>
-      <td>db.t2.micro</td>
+      <td>db.t4g.micro</td>
       <td>no</td>
       <td></td>
     </tr>
