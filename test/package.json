@@ -10,13 +10,13 @@
     "eslint": "7.6.0"
   },
   "scripts": {
-    "test": "eslint . && ava -c 4 *.js"
+    "test": "eslint . && ava -c 5 *.js"
   },
   "ava": {
     "files": [
       "*.js"
     ],
-    "concurrency": 4,
+    "concurrency": 5,
     "timeout": "2h"
   }
 }
