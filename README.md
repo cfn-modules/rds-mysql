@@ -12,7 +12,7 @@ npm i @cfn-modules/rds-mysql
 
 ## Usage
 
-```
+```yaml
 ---
 AWSTemplateFormatVersion: '2010-09-09'
 Description: 'cfn-modules example'
@@ -27,16 +27,20 @@ Resources:
         HostedZoneModule: '' # optional
         BastionModule: '' # optional
         KmsKeyModule: '' # optional
+        SecretModule: '' # optional
         DBSnapshotIdentifier: '' # optional
         DBAllocatedStorage: 5 # optional
-        DBInstanceClass: 'db.t2.micro' # optional
+        DBInstanceClass: 'db.t4g.micro' # optional
         DBName: '' # optional
         DBBackupRetentionPeriod: 30 # optional
         DBMasterUsername: 'master' # optional
-        DBMasterUserPassword: '' # required if DBSnapshotIdentifier is not set
+        DBMasterUserPassword: '' # required if neither DBSnapshotIdentifier nor SecretModule is set
         DBMultiAZ: true # optional
         SubDomainNameWithDot: 'mysql.' # optional
-        EngineVersion: '5.7.21' # set this to the latest available version when launching!
+        # Set this to the version of MySQL you want to use.
+        # You can run the following command to get the list of MySQL versions supported by AWS RDS:
+        # aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"
+        EngineVersion: '8.0.31'
         EnableIAMDatabaseAuthentication: 'false' # optional
       TemplateURL: './node_modules/@cfn-modules/rds-mysql/module.yml'
 ```
@@ -106,6 +110,13 @@ Resources:
       <td></td>
     </tr>
     <tr>
+      <td>SecretModule</td>
+      <td>Stack name of <a href="https://www.npmjs.com/package/@cfn-modules/secret">secret module</a></td>
+      <td></td>
+      <td>no</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>DBSnapshotIdentifier</td>
       <td>Name or Amazon Resource Name (ARN) of the DB snapshot from which you want to restore (leave blank to create an empty database)</td>
       <td></td>
@@ -122,7 +133,7 @@ Resources:
     <tr>
       <td>DBInstanceClass</td>
       <td>The instance type of the database</td>
-      <td>db.t2.micro</td>
+      <td>db.t4g.micro</td>
       <td>no</td>
       <td></td>
     </tr>
@@ -150,7 +161,7 @@ Resources:
     </tr>
     <tr>
       <td>DBMasterUserPassword</td>
-      <td>The master password for the DB instance (ignored when DBSnapshotIdentifier is set, value used from snapshot)</td>
+      <td>The master password for the DB instance (ignored when DBSnapshotIdentifier is set, value used from snapshot; also ignored if SecretModule is set).</td>
       <td></td>
       <td>yes (no if DBSnapshotIdentifier is set)</td>
       <td></td>
@@ -171,10 +182,13 @@ Resources:
     </tr>
     <tr>
       <td>EngineVersion</td>
-      <td>MySQL version</td>
-      <td>5.7.21</td>
-      <td>no</td>
-      <td>['8.0.15', '5.7.25', '5.7.21', '5.6.41', '5.5.61']</td>
+      <td>The MySQL version.</td>
+      <td></td>
+      <td>yes</td>
+      <td>
+        Set this to the version of MySQL you want to use. You can run the following command to get the list of PostgreSQL versions supported by AWS RDS:<br />
+        <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+      </td>
     </tr>
      <tr>
       <td>EnableIAMDatabaseAuthentication</td>
