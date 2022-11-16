@@ -12,7 +12,7 @@ npm i @cfn-modules/rds-mysql
 
 ## Usage
 
-```
+```yaml
 ---
 AWSTemplateFormatVersion: '2010-09-09'
 Description: 'cfn-modules example'
@@ -37,7 +37,10 @@ Resources:
         DBMasterUserPassword: '' # required if neither DBSnapshotIdentifier nor SecretModule is set
         DBMultiAZ: true # optional
         SubDomainNameWithDot: 'mysql.' # optional
-        EngineVersion: '5.7.21' # set this to the latest available version when launching!
+        # Set this to the version of MySQL you want to use.
+        # You can run the following command to get the list of MySQL versions supported by AWS RDS:
+        # aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"
+        EngineVersion: '8.0.31'
         EnableIAMDatabaseAuthentication: 'false' # optional
       TemplateURL: './node_modules/@cfn-modules/rds-mysql/module.yml'
 ```
@@ -179,10 +182,13 @@ Resources:
     </tr>
     <tr>
       <td>EngineVersion</td>
-      <td>MySQL version</td>
-      <td>5.7.21</td>
-      <td>no</td>
-      <td>['8.0.15', '5.7.25', '5.7.21', '5.6.41', '5.5.61']</td>
+      <td>The MySQL version.</td>
+      <td></td>
+      <td>yes</td>
+      <td>
+        Set this to the version of MySQL you want to use. You can run the following command to get the list of PostgreSQL versions supported by AWS RDS:<br />
+        <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+      </td>
     </tr>
      <tr>
       <td>EnableIAMDatabaseAuthentication</td>
