@@ -26,5 +26,5 @@ Resources:
         DBBackupRetentionPeriod: '0'
         DBMasterUserPassword: 'test1234'
         DBMultiAZ: 'false'
-        EngineVersion: '8.0.31'
+        EngineVersion: '8.4.3'
       TemplateURL: './node_modules/@cfn-modules/rds-mysql/module.yml'

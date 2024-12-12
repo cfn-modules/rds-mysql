@@ -13,5 +13,8 @@
   "repository": {
     "type" : "git",
     "url" : "https://github.com/cfn-modules/rds-mysql.git"
+  },
+  "dependencies": {
+    "@cfn-modules/rds-instance": "^1.5.0"
   }
 }
